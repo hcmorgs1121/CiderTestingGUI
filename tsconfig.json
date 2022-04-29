@@ -4,6 +4,7 @@
     "target": "esnext",
     "module": "commonjs",
     "allowJs": true,
+    "moduleResolution": "Node",
     "noImplicitAny": true,
     "strict": true,
     "sourceMap": true,
@@ -17,6 +18,10 @@
       "node_modules/musickit-typescript",
       "node_modules/@types"
     ]
+  },
+  "scripts": {
+    "pretest": "tsc --incremental -p tests/config.json",
+    "test": "playwright test -c tests-out"
   },
   "include": [
     "src/main/**/*",
